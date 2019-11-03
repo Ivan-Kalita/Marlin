@@ -2064,4 +2064,10 @@
 // Only power servos during movement, otherwise leave off to prevent jitter
 //#define DEACTIVATE_SERVOS_AFTER_MOVE
 
+#define ST7920_DELAY_1 DELAY_NS(63)
+
+#define ST7920_DELAY_2 DELAY_NS(188)
+
+#define ST7920_DELAY_3 DELAY_NS(63)
+
 #endif // CONFIGURATION_H
