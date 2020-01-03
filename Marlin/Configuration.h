@@ -37,7 +37,7 @@
  */
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
-#define CONFIGURATION_H_VERSION 010109
+#define CONFIGURATION_H_VERSION 010110
 
 //===========================================================================
 //============================= Getting Started =============================
@@ -773,12 +773,14 @@
  *      O-- FRONT --+
  *    (0,0)
  */
-#define X_PROBE_OFFSET_FROM_EXTRUDER 17    // X offset: -left  +right  [of the nozzle]
-#define Y_PROBE_OFFSET_FROM_EXTRUDER -12   // Y offset: -front +behind [the nozzle]
+#define PROBE_WIDTH 18.0
+#define PROBE_LENGTH 17.0
+#define X_PROBE_OFFSET_FROM_EXTRUDER int(20.0 + PROBE_WIDTH / 2.0)    // X offset: -left  +right  [of the nozzle]
+#define Y_PROBE_OFFSET_FROM_EXTRUDER -int(3.0 + PROBE_LENGTH / 2.0)   // Y offset: -front +behind [the nozzle]
 #define Z_PROBE_OFFSET_FROM_EXTRUDER -1.8  // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
-#define MIN_PROBE_EDGE 10
+#define MIN_PROBE_EDGE 12
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 8000
@@ -1021,10 +1023,10 @@
   #define GRID_MAX_POINTS_Y 6
 
   // Set the boundaries for probing (where the probe can reach).
-  #define LEFT_PROBE_BED_POSITION 1
-  #define RIGHT_PROBE_BED_POSITION 161
-  #define FRONT_PROBE_BED_POSITION 1
-  #define BACK_PROBE_BED_POSITION 199
+  //#define LEFT_PROBE_BED_POSITION 1
+  //#define RIGHT_PROBE_BED_POSITION 161
+  //#define FRONT_PROBE_BED_POSITION 1
+  //#define BACK_PROBE_BED_POSITION 199
 
   // Probe along the Y axis, advancing X after each column
   //#define PROBE_Y_FIRST
